@@ -11,22 +11,25 @@ sudo apt install vault
 Generic linux
 
 ```bash
+sudo apt install unzip \
 wget https://releases.hashicorp.com/vault/1.17.5/vault_1.17.5_linux_amd64.zip \
 unzip vault_1.17.5_linux_amd64.zip \
-./vault status
+sudo mv ./vault /bin \
+vault
 ```
 
 Windows
 
 - Download the file from `https://releases.hashicorp.com/vault/1.17.5/vault_1.17.5_windows_amd64.zip`
 - Unzip the file
-- Run it using the terminal
+- Run `vault` using the terminal
 
 ## Configure vault
 
 Linux
 
 ```bash
+sudo mkdir -p /etc/vault.d
 nano /etc/vault.d/vault.hcl
 ```
 
@@ -57,7 +60,7 @@ storage "file" {
 #  path    = "vault"
 #}
 
-HTTP listener
+# HTTP listener
 listener "tcp" {
  address = "127.0.0.1:8200"
  tls_disable = 1
@@ -132,6 +135,7 @@ Linux
 
 ```bash
 sudo vault server -config /etc/vault.d/vault.hcl
+vault operator init
 ```
 
 Windows
@@ -740,6 +744,10 @@ export VAULT_TOKEN=<token>
 export VAULT_NAMESPACE=<namespace>
 export VAULT_ADDR=<vault_ip>
 export VAULT_LOG_LEVEL=info | debug | warning | error
+```
+## Start vault server
+```bash
+vault server -config <path to config>
 ```
 
 ## Create a secret path
