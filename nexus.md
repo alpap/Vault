@@ -3,35 +3,35 @@
  Sonatype Nexus is a popular repository manager used for managing and organizing software components. It acts as a central hub for storing, sharing, and retrieving software libraries, artifacts, and binaries used in development and deployment processes. Here’s a breakdown of the basics:
 
 ## Types of Nexus Repositories
-Proxy Repositories: These act as a caching proxy for remote repositories (like Maven Central, npm registry, etc.). When you request an artifact, Nexus will download it from the remote source and cache it locally.
-Hosted Repositories: These are local repositories where you can store your own internally developed artifacts.
-Virtual Repositories (Repository Groups): These combine multiple repositories (proxy, hosted, or other groups) into a single repository, simplifying access to multiple sources.
+- Proxy Repositories: These act as a caching proxy for remote repositories (like Maven Central, npm registry, etc.). When you request an artifact, Nexus will download it from the remote source and cache it locally.
+- Hosted Repositories: These are local repositories where you can store your own internally developed artifacts.
+- Virtual Repositories (Repository Groups): These combine multiple repositories (proxy, hosted, or other groups) into a single repository, simplifying access to multiple sources.
 ## Supported Formats
 Nexus supports a wide range of repository formats:
 
-Maven (Java): Stores Java libraries (JAR files) following the Maven structure.
-npm (Node.js): Manages Node.js packages.
-NuGet (.NET): For .NET assemblies and libraries.
-PyPI (Python): Manages Python packages.
-Docker: Stores Docker images in private registries.
-RubyGems (Ruby): Stores Ruby gems.
+- Maven (Java): Stores Java libraries (JAR files) following the Maven structure.
+- npm (Node.js): Manages Node.js packages.
+- NuGet (.NET): For .NET assemblies and libraries.
+- PyPI (Python): Manages Python packages.
+- Docker: Stores Docker images in private registries.
+- RubyGems (Ruby): Stores Ruby gems.
 ## Key Features
-Artifact Storage: Nexus can store software packages and artifacts such as JARs, WARs, ZIPs, and other binaries.
-Dependency Management: It helps in managing dependencies for builds, especially in Maven and Gradle-based projects.
-Versioning: Nexus supports multiple versions of artifacts, making it easy to retrieve the correct version during builds.
-Access Control: It provides fine-grained security with role-based access control (RBAC) for users and groups to manage who can publish, retrieve, or manage artifacts.
+- Artifact Storage: Nexus can store software packages and artifacts such as JARs, WARs, ZIPs, and other binaries.
+- Dependency Management: It helps in managing dependencies for builds, especially in Maven and Gradle-based projects.
+- Versioning: Nexus supports multiple versions of artifacts, making it easy to retrieve the correct version during builds.
+- Access Control: It provides fine-grained security with role-based access control (RBAC) for users and groups to manage who can publish, retrieve, or manage artifacts.
 Search Capabilities: It includes search features for quickly locating artifacts based on various criteria (like name, version, etc.).
 ## Use Cases
-Build Automation: Nexus integrates with build tools (like Jenkins, Maven, and Gradle) to store and retrieve dependencies during automated builds.
-Caching Artifacts: By proxying external repositories, Nexus helps in speeding up builds and reducing external network dependency by caching dependencies locally.
-Internal Package Sharing: Development teams can use Nexus to store and share their internal packages or libraries securely.
-Release Management: It can handle the release of software versions, storing snapshots and released artifacts separately.
+- Build Automation: Nexus integrates with build tools (like Jenkins, Maven, and Gradle) to store and retrieve dependencies during automated builds.
+- Caching Artifacts: By proxying external repositories, Nexus helps in speeding up builds and reducing external network dependency by caching dependencies locally.
+- Internal Package Sharing: Development teams can use Nexus to store and share their internal packages or libraries securely.
+- Release Management: It can handle the release of software versions, storing snapshots and released artifacts separately.
 ## Popular Versions
-Nexus Repository OSS: The open-source version of Nexus with core repository management features.
-Nexus Repository Pro: The paid version with additional features like advanced security, high availability, and support for more formats.
+- Nexus Repository OSS: The open-source version of Nexus with core repository management features.
+- Nexus Repository Pro: The paid version with additional features like advanced security, high availability, and support for more formats.
 ## Integration with DevOps
-Continuous Integration/Continuous Delivery (CI/CD): Nexus integrates well with CI/CD pipelines, ensuring efficient artifact handling during build and deployment phases.
-Sonatype Nexus IQ: For more advanced security and quality scanning, Sonatype also offers Nexus IQ, which analyzes software components for known vulnerabilities and licensing issues.
+- Continuous Integration/Continuous Delivery (CI/CD): Nexus integrates well with CI/CD pipelines, ensuring efficient artifact handling during build and deployment phases.
+- Sonatype Nexus IQ: For more advanced security and quality scanning, Sonatype also offers Nexus IQ, which analyzes software components for known vulnerabilities and licensing issues.
 ## User Interface
 Nexus provides an intuitive web-based user interface where you can:
 
@@ -50,10 +50,11 @@ Package promotion in Sonatype Nexus is the process of moving or promoting softwa
 Promotion helps automate the release process by ensuring that once an artifact has passed all required checks (e.g., testing, security, and quality scanning), it can be promoted to repositories meant for broader consumption (like production).
 
 ## Why is Package Promotion Important?
-Controlled Release Process: Artifacts move through various stages (e.g., development, testing, staging, production) in a controlled way, ensuring stability and quality.
-Security and Quality: Only tested and approved packages are moved to higher-level repositories.
-Continuous Delivery (CD): Fits well with CD pipelines by automating and streamlining the promotion of approved builds.
-Typical Workflow of Package Promotion
+- Controlled Release Process: Artifacts move through various stages (e.g., development, testing, staging, production) in a controlled way, ensuring stability and quality.
+- Security and Quality: Only tested and approved packages are moved to higher-level repositories.
+- Continuous Delivery (CD): Fits well with CD pipelines by automating and streamlining the promotion of approved builds.
+
+## Typical Workflow of Package Promotion
 The basic steps for package promotion in a Nexus environment are:
 
 - Initial Deployment: The package is deployed to a "snapshot" or "development" repository during the development phase.
